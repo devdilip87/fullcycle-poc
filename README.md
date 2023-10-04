@@ -33,19 +33,19 @@ This is a sample Next.js application that demonstrates different methods of fetc
 
    Clone this repository to your local machine:
 
-   git clone https://github.com/your-username/next-fullcycle-poc.git
+   git clone https://github.com/your-username/fullcycle-poc.git
 
 2. **Install Dependencies:**
 
    Navigate to the project directory and install the required dependencies for each application:
     ```bash
-    cd next-fullcycle-poc/car-listing
+    cd fullcycle-poc/car-listing
     npm install
 
-    cd next-fullcycle-poc/server/api-server
+    cd fullcycle-poc/server/api-server
     npm install
 
-    cd next-fullcycle-poc/server/graphql-server
+    cd fullcycle-poc/server/graphql-server
     npm install
     ```
 
@@ -90,10 +90,10 @@ docker image build -t <image_name>:<tag> <path>
 docker push <user_name>/<tag>
 
 ### Docker images
-![docker images](https://github.com/devdilip87/next-fullcycle-poc/car-listing/src/images/docker-image.png)
+![docker images](https://github.com/devdilip87/fullcycle-poc/blob/main/car-listing/src/images/docker-image.png)
 
 ### Docker Containers
-![docker containers](https://github.com/devdilip87/next-fullcycle-poc/car-listing/src/images/docker-containers.png)
+![docker containers](https://github.com/devdilip87/fullcycle-poc/blob/main/car-listing/src/images/docker-container.png)
 
 
 ```markdown
@@ -125,9 +125,9 @@ For each of your Dockerized components (API server, GraphQL server, and Next.js 
 
 Here's an example for the API server (`deployment.yaml`):
 
-![deployment yaml](https://github.com/devdilip87/next-fullcycle-poc/car-listing/src/images/deployment-yaml.png)
+![deployment yaml](https://github.com/devdilip87/fullcycle-poc/blob/main/car-listing/src/images/deployment-yaml.png)
 
-![service yaml](https://github.com/devdilip87/next-fullcycle-poc/car-listing/src/images/service-yaml.png)
+![service yaml](https://github.com/devdilip87/fullcycle-poc/blob/main/car-listing/src/images/service-yaml.png)
 
 Create similar YAML files for your GraphQL server and Next.js application, replacing `api` with appropriate labels and image names.
 
@@ -136,15 +136,15 @@ Create similar YAML files for your GraphQL server and Next.js application, repla
 Apply the Kubernetes configurations to your Minikube cluster using `kubectl`:
 
 ```bash
-cd next-fullcycle-poc/server/api-server
+cd fullcycle-poc/server/api-server
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
-cd next-fullcycle-poc/server/graphql-server
+cd fullcycle-poc/server/graphql-server
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
-cd next-fullcycle-poc/server/car-listing
+cd fullcycle-poc/server/car-listing
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
@@ -161,7 +161,7 @@ kubectl expose deployment nextjs-deployment --type=NodePort --name=nextjs-servic
 
 Use `minikube service` to get the URL of a service and access your applications. For example:
 ```bash
-cd next-fullcycle-poc/server/api-server
+cd fullcycle-poc/server/api-server
 minikube service service
 ```
 
@@ -173,10 +173,10 @@ Repeat the process for your other services as needed.
 
 - create ingress yaml to define route for all services
 
-![ingress yaml](https://github.com/devdilip87/next-fullcycle-poc/car-listing/src/images/ingress-yaml.png)
+![ingress yaml](https://github.com/devdilip87/fullcycle-poc/blob/main/car-listing/src/images/ingress-yaml.png)
 
 ```bash
-cd next-fullcycle-poc
+cd fullcycle-poc
 kubectl apply -f ingress.yaml
 ```
 
